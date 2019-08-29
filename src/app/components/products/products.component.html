@@ -1,0 +1,41 @@
+ 
+
+
+
+<section id="new-arrivals" class="new-arrivals">
+  <div class="container">
+    <div class="section-header">
+      <h2>new arrivals</h2>
+    </div><!--/.section-header-->
+    <div class="new-arrivals-content">
+      <div class="row">
+          <div *ngFor="let procuct of products">
+          <div class="col-md-3" >
+            <div class="single-new-arrival">
+              <div class="single-new-arrival-bg">
+                <img src="{{path}}{{procuct.imagename}}" alt="new-arrivals images">
+                <div class="single-new-arrival-bg-overlay"></div>
+                <div class="sale bg-2">
+                  <p>sale</p>
+                </div>
+                <div class="new-arrival-cart">
+                  <p (click)="addToCart(procuct)" style="cursor: pointer" >
+                    <span class="lnr lnr-cart"></span>
+                    <a >add <span>to </span> cart</a>
+                  </p>
+                  <p class="arrival-review pull-right">
+                    <span class="lnr lnr-heart"></span>
+                    <span class="lnr lnr-frame-expand"></span>
+                  </p>
+                </div>
+              </div>
+              <h4><a routerLink="/product/{{procuct.id}}">{{procuct.productname}}</a></h4>
+              <p class="arrival-product-price">{{procuct.unit_price}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+ 

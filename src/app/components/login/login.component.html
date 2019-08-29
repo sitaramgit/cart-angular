@@ -1,0 +1,35 @@
+
+
+
+
+<br><br>
+<section id="new-arrivals" class="new-arrivals">
+
+<div class="container">
+  <div class="row">
+    <div class="col-md 4"></div>
+    <div class="col-md 4">
+  <form #login="ngForm" class="form-signin" (ngSubmit)="loginForm(login)" >
+   
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+ 
+    <div *ngIf="userDetail!=null" class="alert alert-success">  
+      <p><strong>Hi !</strong> copy this user name and password</p>
+      <pre style="text-transform:none;" >User Name : <span style="color: red">{{userDetail.username}}</span>       Password : <span style="color: red">{{userDetail.password}}</span></pre>
+    </div>
+    <label for="inputEmail" class="sr-only">Email address</label>
+    <input type="email" name="email" ngModel id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
+    <br>
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" name="password" ngModel id="inputPassword" class="form-control" placeholder="Password" required="">
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+ 
+  </form>
+  <br>
+  <a routerLink="/register">Register Here..</a>
+  </div>
+  <div class="col-md 4"></div>
+  </div>
+</div>
+</section>

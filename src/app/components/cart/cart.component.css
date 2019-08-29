@@ -1,0 +1,26 @@
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.d-inline-block {
+    display: inline-block!important;
+}
+.p-2 {
+    padding: .5rem!important;
+}
+
+.product-title{
+    margin-left: 18px;
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+

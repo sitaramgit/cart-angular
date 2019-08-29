@@ -1,0 +1,86 @@
+ 
+
+
+
+    <br><br>
+
+    <section id="new-arrivals" class="new-arrivals">
+        <div class="container">
+          <div class="section-header">
+            <h2>Check Out</h2>
+          </div><!--/.section-header-->
+         
+          <br><br>
+          <div class="row">
+              <div class="col-md-2 order-md-2 mb-4"> 
+      
+                
+              </div>
+
+              <div class="col-md-8 order-md-1">
+             
+                <form class="needs-validation" #checkForm="ngForm" (ngSubmit)="submitCheckout(checkForm)" novalidate="">
+              
+                  <hr class="mb-4">
+      
+                  <h4 class="mb-3">Payment</h4>
+      
+                  <div class="d-block my-3">
+                      <div class="custom-control custom-radio">
+                          <input id="cash_on_delivery"  name="paymentMethod" type="radio" class="custom-control-input" checked="" (change)="changeMethod('cash_on_delivery')" value="cash_on_delivery" required="">
+                          <label class="custom-control-label" for="cash_on_delivery">Cash On Delivery</label>
+                        </div>
+
+                    <div class="custom-control custom-radio">
+                      <input id="credit" name="paymentMethod"  ngModel type="radio" class="custom-control-input" (change)="changeMethod('credit_card')"  required="">
+                      <label class="custom-control-label" for="credit">Credit card</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                      <input id="debit" name="paymentMethod"  ngModel type="radio" class="custom-control-input" (change)="changeMethod('debit_card')" required="">
+                      <label class="custom-control-label" for="debit">Debit card</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                      <input id="paypal" name="paymentMethod"  ngModel type="radio" class="custom-control-input" (change)="changeMethod('paypal')" required="">
+                      <label class="custom-control-label" for="paypal">Paypal</label>
+                    </div>
+                  </div>
+                  <div class="row" *ngIf="showForm">
+                    <div class="col-md-6 mb-3">
+                      <label for="cc-name">Name on card</label>
+                      <input type="text" class="form-control" id="cc-name" placeholder="Name on card is required" required="">
+                      <small class="text-muted">Full name as displayed on card</small>
+                     
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="cc-number">Credit card number</label>
+                      <input type="text" class="form-control" id="cc-number" placeholder="Credit card number" required="">
+                      
+                    </div>
+                  </div>
+                  <div class="row" *ngIf="showForm">
+                    <div class="col-md-3 mb-3">
+                      <label for="cc-expiration">Expiration</label>
+                      <input type="text" class="form-control" id="cc-expiration" placeholder="Expiration" required="">
+                      
+                    </div>
+                    <div class="col-md-3 mb-3">
+                      <label for="cc-expiration">CVV</label>
+                      <input type="text" class="form-control" id="cc-cvv" placeholder="CVV" required="">
+                 
+                    </div>
+                  </div>
+                  <hr class="mb-4">
+                  <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+                </form>
+              </div>
+
+              <div class="col-md-2 order-md-2 mb-4"> 
+      
+                
+                </div>
+            </div>
+    
+    
+      </div>
+    </section>
+       

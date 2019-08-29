@@ -1,0 +1,156 @@
+ 
+
+
+
+    
+
+<section id="new-arrivals" class="new-arrivals">
+    <div class="container">
+      <div class="section-header">
+        <h2>Cart Details</h2>
+      </div><!--/.section-header-->
+     
+
+      <div class="row">
+        <div class="col-md-9">
+
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" class="border-0 bg-light">
+                <div class="p-2 px-3 text-uppercase">Product</div>
+              </th>
+              <th scope="col" class="border-0 bg-light">
+                <div class="p-2 px-3 text-uppercase">title</div>
+              </th>
+              <th scope="col" class="border-0 bg-light">
+                <div class="py-2 text-uppercase">Price</div>
+              </th>
+              <th scope="col" class="border-0 bg-light">
+                <div class="py-2 text-uppercase">Quantity</div>
+              </th>
+              <th scope="col" class="border-0 bg-light">
+                  <div class="py-2 text-uppercase">Total</div>
+                </th>
+              <th scope="col" class="border-0 bg-light">
+                <div class="py-2 text-uppercase">Remove</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+
+
+            <tr *ngFor="let product of products" id="tr_{{product.id}}">
+              <th scope="row" class="border-0" width="100">
+                <div class="p-2">
+                  <img src="{{imgPath}}{{product.imagename}}" alt="" width="70" class="img-fluid rounded shadow-sm">
+                  
+                </div>
+              </th>
+              <td class="border-0 align-middle" width="300">
+                <div class="ml-3 d-inline-block align-middle product-title">
+                  <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">{{product.productname}}</a></h5>
+                  <span class="text-muted font-weight-normal font-italic d-block">Category: {{product.productcategory}}</span>
+                </div>
+              </td>
+              <td class="border-0 align-middle"><strong class="unit_price">{{product.unit_price}}</strong></td>
+              <td class="border-0 align-middle">
+                
+                <select  class="form-control quantity" (change)="invovice()" >
+                   
+                      <option *ngFor="let number of [1,2,3,4,5,6,7,8,9]" value="{{number}}" >{{number}}</option>
+               
+                </select>
+              </td>
+              <td class="border-0 align-middle text-center">
+                 <span class="productTotal"></span>
+              </td>
+              <td class="border-0 align-middle text-center">
+                <i  class="fa fa-trash" style="cursor: pointer;" (click)="removeFromCart(product.id)"></i>
+                <input type="hidden" class="productId" value="{{product.id}}" >
+              </td>
+            </tr>
+
+        
+           
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+    <!-- total cart -->
+    <div class="col-md-3 ">
+        
+
+      <br>  <br> <br>
+        <ul class="list-group mb-3">
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+              
+              
+              <div class="row">
+                <div class="col-md-9">
+                    <h6 class="my-0">Total Products</h6>
+                </div>
+                <div class="col-md-3">
+                  <p class="text-right" id="totProduct">0</p>
+                </div>
+              </div>
+          </li>
+
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+               <div class="row">
+                <div class="col-md-9">
+                    <h6 class="my-0">Sub Total</h6>
+                </div>
+                <div class="col-md-3">
+                  <p class="text-right" id="subTotal">1200.00</p>
+                </div>
+              </div>
+          </li>
+
+          <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <div class="row">
+               <div class="col-md-9">
+                   <h6 class="my-0">Shipping</h6>
+               </div>
+               <div class="col-md-3">
+                 <p class="text-right">0.00</p>
+               </div>
+             </div>
+         </li>
+
+         <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div class="row">
+             <div class="col-md-9">
+                 <h6 class="my-0">Taxes</h6>
+             </div>
+             <div class="col-md-3">
+               <p class="text-right">0.00</p>
+             </div>
+           </div>
+       </li>
+
+       <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div class="row">
+           <div class="col-md-9">
+               <h6 class="active">Grand Total</h6>
+           </div>
+           <div class="col-md-3">
+             <p class="text-right active" id="grandTotal">00.00</p>
+           </div>
+         </div>
+     </li> 
+          
+        </ul>
+  
+         
+              <button type="button" (click)="checkoutPage()" class="btn btn-success btn-block active">Checkout</button>
+            
+      </div>
+  </div>
+
+
+      </div>
+    </section>
+   

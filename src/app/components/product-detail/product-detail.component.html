@@ -1,0 +1,34 @@
+<div class="container">
+    
+  
+  <div class="welcome-hero-content">
+    <div class="row">
+       
+      <div class="col-sm-7">
+        <div class="single-welcome-hero">
+          <div class="welcome-hero-txt">
+            <h4>{{proDetail.productname}}</h4> 
+            <p>{{proDetail.description}}</p>
+            <div class="packages-price">
+              <p>Price : {{proDetail.unit_price}} </p>
+              <p>In Stock : {{proDetail.qtyinstock}} </p>
+              <p>Category : {{proDetail.productcategory}} </p>
+            </div>
+            <button class="btn-cart welcome-add-cart" (click)="addTocart(proDetail.id)"  >
+              <span class="lnr lnr-plus-circle"></span>
+              add <span>to</span> cart
+            </button>
+           
+          </div><!--/.welcome-hero-txt-->
+        </div><!--/.single-welcome-hero-->
+      </div><!--/.col-->
+      <div class="col-sm-5"> 
+        <div class="single-welcome-hero">
+          <div class="welcome-hero-img">
+            <img src="{{servePath}}{{proDetail.imagename}}" alt="slider image">
+          </div><!--/.welcome-hero-txt-->
+        </div><!--/.single-welcome-hero-->
+      </div><!--/.col-->
+    </div><!--/.row-->
+  </div><!--/.welcome-hero-content-->
+</div><!-- /.container-->
